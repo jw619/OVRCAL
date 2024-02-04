@@ -8,79 +8,46 @@
         body {
             font-family: "Segoe UI", sans-serif;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        td, th {
-            border: 1px solid #ddd;
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        .result {
-            font-size: 16px;
-            margin-top: 20px;
-        }
-
-        /* 데스크탑 뷰 스타일 */
-        @media screen and (min-width: 769px) {
-            /* 스타일 없음 - 기본 HTML 테이블 스타일 적용 */
-        }
+        /* 기존 스타일 생략... */
 
         /* 모바일 뷰 스타일 */
         @media screen and (max-width: 768px) {
-            thead {
-                display: none; /* 테이블 헤더는 숨김 */
-            }
-            table, tbody, th, td, tr {
+            /* 기존 모바일 스타일 생략... */
+
+            /* 계산 버튼 스타일 */
+            .calculate-btn {
                 display: block;
+                width: 80%; /* 버튼의 너비 */
+                height: 50px; /* 버튼의 높이 */
+                margin: 20px auto; /* 상하 20px, 좌우 자동으로 중앙 정렬 */
+                background-color: #007BFF; /* 배경 색상 */
+                color: white; /* 텍스트 색상 */
+                font-size: 20px; /* 텍스트 크기 */
+                border: none; /* 테두리 없음 */
+                border-radius: 25px; /* 둥근 모서리 */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+                text-align: center; /* 텍스트 중앙 정렬 */
+                line-height: 50px; /* 라인 높이를 버튼 높이와 동일하게 설정하여 텍스트를 버튼 중앙에 위치 */
             }
-            tr {
-                margin-bottom: 10px;
-            }
-            td {
-                /* 각 셀에 라벨을 추가하기 위해 data-label 사용 */
-                text-align: right;
-                padding-left: 50%;
-                position: relative;
-                border-bottom: 1px solid #ddd;
-            }
-            td:before {
-                /* data-label 속성의 값을 콘텐츠로 사용하여 라벨을 생성 */
-                content: attr(data-label);
-                position: absolute;
-                left: 10px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-                text-align: left;
-                font-weight: bold;
+            .calculate-btn:focus,
+            .calculate-btn:hover {
+                background-color: #0056b3; /* 호버 시 배경 색상 변경 */
+                outline: none; /* 클릭 시 윤곽선 제거 */
             }
         }
     </style>
 </head>
 <body>
     <h1>FC모바일 팀 오버롤 계산기</h1>
-    <table id="players-table">
-        <thead>
-            <tr>
-                <th>선수</th>
-                <th>진화 등급</th>
-                <th>강화 레벨</th>
-                <th>스킬 부스트</th>
-                <th>기본 오버롤</th>
-                <th>각성 레벨</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- 선수 입력 필드는 자바스크립트로 생성될 것입니다 -->
-        </tbody>
-    </table>
-    <button onclick="calculateTeamOverall()">팀 전체 평균 계산</button>
+    <!-- 테이블 코드 생략... -->
+
+    <!-- 계산 버튼에 클래스 추가 -->
+    <button class="calculate-btn" onclick="calculateTeamOverall()">팀 전체 평균 계산</button>
+    
+    <!-- 결과 표시 영역 -->
     <div class="result" id="result"></div>
+    
+    <!-- 자바스크립트 파일 연결 -->
     <script src="script.js"></script>
 </body>
 </html>
