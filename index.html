@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>팀 오버롤 계산기</title>
+    <style>
+        body {
+            font-family: "Malgun Gothic", sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .result {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr { 
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr { border: 1px solid #ddd; }
+            td {
+                padding-left: 50%;
+                text-align: right;
+                position: relative;
+            }
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>팀 오버롤 계산기</h1>
+    <table id="players-table">
+        <thead>
+            <tr>
+                <th>선수</th>
+                <th>진화 등급</th>
+                <th>강화 레벨</th>
+                <th>스킬 부스트</th>
+                <th>기본 오버롤</th>
+                <th>각성 레벨</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 선수 입력 필드는 자바스크립트로 생성 -->
+        </tbody>
+    </table>
+    <button onclick="calculateTeamOverall()">팀 전체 평균 계산</button>
+    <div class="result" id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+
